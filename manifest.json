@@ -1,0 +1,12 @@
+{
+    "name": "EnArvy's Captcha Solver",
+    "description": "Chrome extension to solve numerous captchas",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [{
+      "matches": ["https://moodle.iitd.ac.in/login/index.php"],
+      "js":["moodle.js"]
+
+    }],
+    "permissions": ["storage"]
+  }
