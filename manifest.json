@@ -8,5 +8,12 @@
       "js":["moodle.js"]
 
     }],
-    "permissions": ["storage"]
+    "permissions": ["storage"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    
+    "options_ui":{
+      "page":"options.html"
+    }
   }
