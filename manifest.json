@@ -3,17 +3,32 @@
     "description": "Chrome extension to solve numerous captchas",
     "version": "1.0",
     "manifest_version": 3,
-    "content_scripts": [{
-      "matches": ["https://moodle.iitd.ac.in/login/index.php"],
-      "js":["moodle.js"]
-
-    }],
+    "web_accessible_resources": [{
+      "resources":[
+      "js/worker.min.js",
+      "js/tesseract-core.wasm.js",
+      "traineddata/*.traineddata.gz",
+      "js/tesseract.min.js"],"matches":["https://webmail.iitd.ac.in/*"]}
+    ],
+    "content_scripts":
+      [
+        {
+          "matches": ["https://moodle.iitd.ac.in/login/index.php"],
+          "js":["moodle.js"]
+        },
+        {
+          "matches":["https://webmail.iitd.ac.in/*"],
+          "js":["js/tesseract.min.js","webmail.js"]
+        }
+      ],
     "permissions": ["storage"],
     "action": {
       "default_popup": "popup.html"
     },
     
     "options_ui":{
-      "page":"options.html"
+      "page":"options.html",
+      "open_in_tab":true
     }
+    
   }
