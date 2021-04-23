@@ -8,7 +8,7 @@
       "js/worker.min.js",
       "js/tesseract-core.wasm.js",
       "traineddata/*.traineddata.gz",
-      "js/tesseract.min.js"],"matches":["https://webmail.iitd.ac.in/*"]}
+      "js/tesseract.min.js","marvin.min.js"],"matches":["https://webmail.iitd.ac.in/*"]}
     ],
     "content_scripts":
       [
@@ -18,7 +18,7 @@
         },
         {
           "matches":["https://webmail.iitd.ac.in/*"],
-          "js":["js/tesseract.min.js","webmail.js"]
+          "js":["marvin.min.js","js/tesseract.min.js","webmail.js"]
         }
       ],
     "permissions": ["storage"],

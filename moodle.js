@@ -13,8 +13,10 @@ if(/second/.test(captcha))
 
     document.getElementById("valuepkg3").value = String(captcha);//entering the captcha
 
-    document.getElementById("username").value="username";
-    document.getElementById("password").value="password";
 
+    //retrieve username and password from storage and inputing
+    chrome.storage.local.get(['moodleuname'],function(result){document.getElementById("username").value=result.moodleuname;});
+    chrome.storage.local.get(['moodlepass'],function(result){document.getElementById("password").value=result.moodlepass;});
     
+    //pressing login button
     document.getElementById("loginbtn").click();//click on login button
