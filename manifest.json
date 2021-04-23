@@ -14,11 +14,11 @@
       [
         {
           "matches": ["https://moodle.iitd.ac.in/login/index.php"],
-          "js":["moodle.js"]
+          "js":["js/moodle.js"]
         },
         {
           "matches":["https://webmail.iitd.ac.in/*"],
-          "js":["marvin.min.js","js/tesseract.min.js","webmail.js"]
+          "js":["js/marvin.min.js","js/tesseract/tesseract.min.js","js/webmail.js"]
         }
       ],
     "permissions": ["storage"],
