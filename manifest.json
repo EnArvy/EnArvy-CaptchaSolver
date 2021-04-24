@@ -2,14 +2,7 @@
     "name": "EnArvy's Captcha Solver",
     "description": "Chrome extension to solve numerous captchas",
     "version": "1.0",
-    "manifest_version": 3,
-    "web_accessible_resources": [{
-      "resources":[
-      "js/worker.min.js",
-      "js/tesseract-core.wasm.js",
-      "traineddata/*.traineddata.gz",
-      "js/tesseract.min.js","marvin.min.js"],"matches":["https://webmail.iitd.ac.in/*"]}
-    ],
+    "manifest_version": 2,
     "content_scripts":
       [
         {
@@ -18,7 +11,11 @@
         },
         {
           "matches":["https://webmail.iitd.ac.in/*"],
-          "js":["js/jsaes.js","cbl.js","js/marvin.min.js","js/tesseract/tesseract.min.js","js/webmail.js"]
+          "js":["js/jsaes.js","cbl.js","js/webmail.js"]
+        },
+        {
+          "matches":["https://oauth.iitd.ac.in/*"],
+          "js":["js/ocrad.js","js/kerberos.js"]
         }
       ],
     "permissions": ["storage"],
@@ -29,6 +26,7 @@
     "options_ui":{
       "page":"options.html",
       "open_in_tab":true
-    }
+    },
+    "content_security_policy": "script-src 'unsafe-eval'"
     
   }

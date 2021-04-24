@@ -17,3 +17,12 @@ var cbl = new CBL({
 cbl.solve("captcha_image").done(function (solution) {
   // Upon finding a solution, fill the solution textbox with the answer.
 console.log(solution)});
+
+
+chrome.storage.local.get(['webmailuname','webmailpass'],function(result){
+
+  document.getElementById("rcmloginuser").value=result.webmailuname;
+  document.getElementById("rcmloginpwd").value=result.webmailpass;
+  //document.getElementById("rcmloginsubmit").click();//click on login button
+}
+);
