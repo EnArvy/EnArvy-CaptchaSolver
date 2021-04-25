@@ -40,6 +40,13 @@ function encrypted(plaintext){
 } 
 
 function changepass(field,trypass,newpass){
+  if(trypass==""){
+    var dataObj={};
+      dataObj[field]=encrypted(newpass);
+      chrome.storage.local.set(dataObj);
+      window.location.reload();
+  }
+  else
   chrome.storage.local.get([field],function(result){
     if(CryptoJS.AES.decrypt(result[field],"function()").toString(CryptoJS.enc.Utf8)==trypass){
       var dataObj={};

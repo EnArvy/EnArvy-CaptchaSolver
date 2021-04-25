@@ -6,6 +6,8 @@ This chrome extension solves captcha's and auto logins on various sites.
 * Kerberos
 * Webmail(Extremely low accuracy now, will be corrected later)
 ## Configuration
+To install, clone this repository. Then go to chrome extensions menu and toggle developer mode. After that, click on load unpacked extension and select the place where the file manifest.json is located.
+
 After installlation, click on the extension icon and press configure OR go to the options from the extension menu.
 
 Then, Set a master password. To do this, input master password in new password field and leave the old password field blank. Click save.
