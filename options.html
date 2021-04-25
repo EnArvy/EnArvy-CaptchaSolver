@@ -1,35 +1,55 @@
-<link rel="stylesheet" href="options.css">
+<style>
+*{
+  background-color: #2b2d42;
+  color:#02a9ff;
+}
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 1px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
+
+<h1 style="position:absolute;left:40%;top:0%;">Change Master Password</h1>
+<input style="position:absolute;left:35%;top:10%;"id="oldmaster"type="password"placeholder="Old password">
+<input style="position:absolute;left:50%;top:10%;"id="master"type="password"placeholder="New password"/>
+<button style="position:absolute;left:65%;top:10%;"id="mastersave"type="submit">Save</button>
 
 
-<h1 style="text-align: center;">Master Password</h1>
-<input style="position:absolute;left:35%;"id="oldmaster" type="password" placeholder="old password">
-<input style="position:absolute;left:50%;"id="master" type="password" placeholder="new password"/>
-<button style="position:absolute;left:65%;"id="mastersave" type="submit">Save</button>
-
+<h1 style="position:absolute;left:40%;top:20% ;">Change Website Passwords</h1>
 <table>
     <tr >
-      <td style="position:absolute;left:10%;top:20%;"><h1>Website      </h1></td>
-      <td style="position:absolute;left:30%;top:20%;"><h1>Username     </h1></td>
-      <td style="position:absolute;left:50%;top:20%;"><h1>Password</h1></td>
+      <td style="position:absolute;left:5%;top:30%;"><h1>Website</h1></td>
+      <td style="position:absolute;left:25%;top:30%;"><h1>Username</h1></td>
+      <td style="position:absolute;left:45%;top:30%;"><h1>Password</h1></td>
+      <td style="position:absolute;left:65%;top:30%;"><h1>Master Password</h1></td>
     </tr>
     <tr >
-        <td style="position:absolute;left:10%;top:35%;"><h3>Moodle</h3></td>
-        <td style="position:absolute;left:30%;top:40%;"> <input id="moodleuname" type="text" name="username"  placeholder="username" /></td>
-        <td style="position:absolute;left:50%;top:40%;"> <input id="moodlepass" type="password" name="password"  placeholder="password"/> </td>
-        <td style="position:absolute;left:70%;top:40%;"> <button id="moodlesave" type="submit">Save</button></td>
+        <td style="position:absolute;left:5%;top:45%;"><h3>Moodle</h3></td>
+        <td style="position:absolute;left:25%;top:50%;"><input id="moodleuname" type="text"placeholder="New username"/></td>
+        <td style="position:absolute;left:45%;top:50%;"><input id="moodlepass" type="password"placeholder="New password"/></td>
+        <td style="position:absolute;left:65%;top:50%;"><input id="moodlemasterpassword" type="password"placeholder="Master password"></td>
+        <td style="position:absolute;left:88%;top:50%;"><button id="moodlesave" type="submit">Save</button></td>
     </tr>
     <tr>
-      <td style="position:absolute;left:10%;top:55%;"><h3>Webmail</h3></td>
-      <td style="position:absolute;left:30%;top:60%;"> <input id="webmailuname" type="text" name="username"  placeholder="username" /></td>
-      <td style="position:absolute;left:50%;top:60%;"> <input id="webmailpass" type="password" name="password"  placeholder="password"/> </td>
-      <td style="position:absolute;left:70%;top:60%;"> <button id="webmailsave" type="submit">Save</button></td>
+      <td style="position:absolute;left:5%;top:65%;"><h3>Webmail</h3></td>
+      <td style="position:absolute;left:25%;top:70%;"> <input id="webmailuname" type="text" name="username"  placeholder="New username" /></td>
+      <td style="position:absolute;left:45%;top:70%;"> <input id="webmailpass" type="password" name="password"  placeholder="New password"/> </td>
+      <td style="position:absolute;left:65%;top:70%;"><input id="webmailmasterpassword" type="password"placeholder="Master password"></td>
+      <td style="position:absolute;left:88%;top:70%;"> <button id="webmailsave" type="submit">Save</button></td>
   </tr>
   <tr>
-    <td style="position:absolute;left:10%;top:75%;"><h3>Kerberos</h3></td>
-    <td style="position:absolute;left:30%;top:80%;"> <input id="kerberosuname" type="text" name="username"  placeholder="username" /></td>
-    <td style="position:absolute;left:50%;top:80%;"> <input id="kerberospass" type="password" name="password"  placeholder="password"/> </td>
-    <td style="position:absolute;left:70%;top:80%;"> <button id="kerberossave" type="submit">Save</button></td>
+    <td style="position:absolute;left:5%;top:85%;"><h3>Kerberos</h3></td>
+    <td style="position:absolute;left:25%;top:90%;"> <input id="kerberosuname" type="text" name="username"  placeholder="New username" /></td>
+    <td style="position:absolute;left:45%;top:90%;"> <input id="kerberospass" type="password" name="password"  placeholder="New password"/> </td>
+    <td style="position:absolute;left:65%;top:90%;"><input id="kerberosmasterpassword" type="password"placeholder="Master password"></td>
+    <td style="position:absolute;left:88%;top:90%;"> <button id="kerberossave" type="submit">Save</button></td>
 </tr>
 </table>
-<script src="js/jsaes.js"></script>
+<script src="js/passwords.js"></script>
 <script src="js/options.js"></script>

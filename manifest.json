@@ -2,16 +2,19 @@
     "name": "EnArvy's Captcha Solver",
     "description": "Chrome extension to solve numerous captchas",
     "version": "1.0",
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
     "manifest_version": 2,
     "content_scripts":
       [
         {
           "matches": ["https://moodle.iitd.ac.in/login/index.php"],
-          "js":["js/jsaes.js","js/moodle.js"]
+          "js":["js/moodle.js"]
         },
         {
           "matches":["https://webmail.iitd.ac.in/*"],
-          "js":["js/jsaes.js","cbl.js","js/webmail.js"]
+          "js":["cbl.js","js/webmail.js"]
         },
         {
           "matches":["https://oauth.iitd.ac.in/*"],
@@ -19,14 +22,12 @@
         }
       ],
     "permissions": ["storage"],
-    "action": {
-      "default_popup": "popup.html"
-    },
+
     
     "options_ui":{
       "page":"options.html",
       "open_in_tab":true
     },
-    "content_security_policy": "script-src 'unsafe-eval'"
+    "content_security_policy":"script-src 'unsafe-inline' 'self'"
     
   }

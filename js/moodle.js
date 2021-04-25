@@ -13,6 +13,7 @@ if(/second/.test(captcha))
 
    
 //retrieve username and password from local storage and inputing
+console.log("bob");
   
 chrome.storage.local.get(['moodleuname','moodlepass'],function(result){
 
