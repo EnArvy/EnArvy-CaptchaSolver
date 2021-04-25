@@ -14,11 +14,11 @@
         },
         {
           "matches":["https://webmail.iitd.ac.in/*"],
-          "js":["cbl.js","js/webmail.js"]
+          "js":["js/passwords.js","js/cbl.js","js/webmail.js"]
         },
         {
           "matches":["https://oauth.iitd.ac.in/*"],
-          "js":["js/ocrad.js","js/passwords.js","js/kerberos.js"]
+          "js":["js/passwords.js","js/kerberos.js"]
         }
       ],
     "permissions": ["storage"],

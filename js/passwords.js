@@ -68,7 +68,6 @@ function fill(ufield,uid,pfield,pid,cap,capid,bid){
     document.getElementById(pfield).value=CryptoJS.AES.decrypt(result[pid],"function()").toString(CryptoJS.enc.Utf8);
     document.getElementById(capid).value=cap;
     document.getElementById(bid).click();
-    console.log(CryptoJS.AES.decrypt(result[id],"function()").toString(CryptoJS.enc.Utf8));
   })
   
 }
@@ -78,6 +77,13 @@ function kerfill(ufield,uid,pfield,pid,cap,capid,bid){
     document.getElementsByName(pfield)[0].value=CryptoJS.AES.decrypt(result[pid],"function()").toString(CryptoJS.enc.Utf8);
     document.getElementsByName(capid)[0].value=cap;
     document.getElementsByName(bid)[0].click();
-    console.log(CryptoJS.AES.decrypt(result[id],"function()").toString(CryptoJS.enc.Utf8));
   })
 }
+
+function webfill(ufield,uid,pfield,pid,cap,capid,bid){
+  chrome.storage.local.get([uid,pid],function(result){
+    document.getElementById(ufield).value=CryptoJS.AES.decrypt(result[uid],"function()").toString(CryptoJS.enc.Utf8);
+    document.getElementById(pfield).value=CryptoJS.AES.decrypt(result[pid],"function()").toString(CryptoJS.enc.Utf8);
+    document.getElementsByName(capid)[0].value=cap;
+    //document.getElementById(bid).click();
+})}
