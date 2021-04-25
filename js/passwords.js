@@ -36,11 +36,48 @@ d[k>>>24]^e[n>>>16&255]^j[g>>>8&255]^l[h&255]^c[p++],n=d[n>>>24]^e[g>>>16&255]^j
 
 function encrypted(plaintext){
   var encryptedAES = CryptoJS.AES.encrypt(plaintext,"function()").toString();
-  console.log(encryptedAES); 
   return encryptedAES;
 } 
 
-function decrypted(password){
-  var decrypted = CryptoJS.AES.decrypt(password,"function()").toString(CryptoJS.enc.Utf8);
-  return decrypted;
+function changepass(field,trypass,newpass){
+  chrome.storage.local.get([field],function(result){
+    if(CryptoJS.AES.decrypt(result[field],"function()").toString(CryptoJS.enc.Utf8)==trypass){
+      var dataObj={};
+      dataObj[field]=encrypted(newpass);
+      chrome.storage.local.set(dataObj);
+      window.location.reload();
+    }
+  })
+}
+
+function change(field,pass,value){
+  chrome.storage.local.get([field,'master'],function(result){
+    if(CryptoJS.AES.decrypt(result.master,"function()").toString(CryptoJS.enc.Utf8)==pass){
+      var dataObj={};
+      dataObj[field]=encrypted(value);
+      chrome.storage.local.set(dataObj);
+      window.location.reload();
+    }
+
+  })
+}
+
+function fill(ufield,uid,pfield,pid,cap,capid,bid){
+  chrome.storage.local.get([uid,pid],function(result){
+    document.getElementById(ufield).value=CryptoJS.AES.decrypt(result[uid],"function()").toString(CryptoJS.enc.Utf8);
+    document.getElementById(pfield).value=CryptoJS.AES.decrypt(result[pid],"function()").toString(CryptoJS.enc.Utf8);
+    document.getElementById(capid).value=cap;
+    document.getElementById(bid).click();
+    console.log(CryptoJS.AES.decrypt(result[id],"function()").toString(CryptoJS.enc.Utf8));
+  })
+  
+}
+function kerfill(ufield,uid,pfield,pid,cap,capid,bid){
+  chrome.storage.local.get([uid,pid],function(result){
+    document.getElementsByName(ufield)[0].value=CryptoJS.AES.decrypt(result[uid],"function()").toString(CryptoJS.enc.Utf8);
+    document.getElementsByName(pfield)[0].value=CryptoJS.AES.decrypt(result[pid],"function()").toString(CryptoJS.enc.Utf8);
+    document.getElementsByName(capid)[0].value=cap;
+    document.getElementsByName(bid)[0].click();
+    console.log(CryptoJS.AES.decrypt(result[id],"function()").toString(CryptoJS.enc.Utf8));
+  })
 }
