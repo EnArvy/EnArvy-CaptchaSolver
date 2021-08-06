@@ -96294,5 +96294,7 @@ if (typeof module !== 'undefined' && module.exports) {
 	module.exports = OCRAD;
 }
 
-captcha = OCRAD(document.getElementsByClassName("captcha-image")[0]);
-kerfill("username","kerberosuname","password","kerberospass",captcha,"captcha","submit"); 
+window.onload = function(){
+  captcha = OCRAD(document.getElementsByClassName("captcha-image")[0]);
+  kerfill("username","kerberosuname","password","kerberospass",captcha,"captcha","submit"); 
+}

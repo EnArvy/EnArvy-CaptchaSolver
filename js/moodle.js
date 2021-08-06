@@ -1,3 +1,4 @@
+window.onload = function(){
 captcha = document.getElementById("login").textContent;//get the captcha text
 numbers = [...captcha.matchAll(/(\d\d\d|\d\d|\d)/g)];//get both numbers in captcha using regex
 
@@ -16,4 +17,4 @@ if(/second/.test(captcha))
 
 
 fill("username","moodleuname","password","moodlepass",captcha,"valuepkg3","loginbtn");
-   
+   }
