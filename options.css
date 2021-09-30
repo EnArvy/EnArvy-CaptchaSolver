@@ -1,0 +1,40 @@
+* {
+  background-color: #2b2d42;
+  color: #02a9ff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input {
+  border: 2px solid #02a9ff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+html {
+  height: 100%;
+}
+
+table {
+  width: 100%;
+  border: #02a9ff 2px solid;
+}
+table,
+th,
+td {
+  text-align: center;
+  padding: 20px;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 2rem;
+}
+button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 1px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

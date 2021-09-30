@@ -1,55 +1,133 @@
-<style>
-*{
-  background-color: #2b2d42;
-  color:#02a9ff;
-}
-button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 1px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/passwords.js"></script>
+    <script src="js/options.js"></script>
+    <title>EnArvy's Captcha Solver</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
 
-<h1 style="position:absolute;left:40%;top:0%;">Change Master Password</h1>
-<input style="position:absolute;left:35%;top:10%;"id="oldmaster"type="password"placeholder="Old password">
-<input style="position:absolute;left:50%;top:10%;"id="master"type="password"placeholder="New password"/>
-<button style="position:absolute;left:65%;top:10%;"id="mastersave"type="submit">Save</button>
-
-
-<h1 style="position:absolute;left:40%;top:20% ;">Change Website Passwords</h1>
-<table>
-    <tr >
-      <td style="position:absolute;left:5%;top:30%;"><h1>Website</h1></td>
-      <td style="position:absolute;left:25%;top:30%;"><h1>Username</h1></td>
-      <td style="position:absolute;left:45%;top:30%;"><h1>Password</h1></td>
-      <td style="position:absolute;left:65%;top:30%;"><h1>Master Password</h1></td>
-    </tr>
-    <tr >
-        <td style="position:absolute;left:5%;top:45%;"><h3>Moodle</h3></td>
-        <td style="position:absolute;left:25%;top:50%;"><input id="moodleuname" type="text"placeholder="New username"/></td>
-        <td style="position:absolute;left:45%;top:50%;"><input id="moodlepass" type="password"placeholder="New password"/></td>
-        <td style="position:absolute;left:65%;top:50%;"><input id="moodlemasterpassword" type="password"placeholder="Master password"></td>
-        <td style="position:absolute;left:88%;top:50%;"><button id="moodlesave" type="submit">Save</button></td>
-    </tr>
-    <tr>
-      <td style="position:absolute;left:5%;top:65%;"><h3>Webmail</h3></td>
-      <td style="position:absolute;left:25%;top:70%;"> <input id="webmailuname" type="text" name="username"  placeholder="New username" /></td>
-      <td style="position:absolute;left:45%;top:70%;"> <input id="webmailpass" type="password" name="password"  placeholder="New password"/> </td>
-      <td style="position:absolute;left:65%;top:70%;"><input id="webmailmasterpassword" type="password"placeholder="Master password"></td>
-      <td style="position:absolute;left:88%;top:70%;"> <button id="webmailsave" type="submit">Save</button></td>
-  </tr>
-  <tr>
-    <td style="position:absolute;left:5%;top:85%;"><h3>Kerberos</h3></td>
-    <td style="position:absolute;left:25%;top:90%;"> <input id="kerberosuname" type="text" name="username"  placeholder="New username" /></td>
-    <td style="position:absolute;left:45%;top:90%;"> <input id="kerberospass" type="password" name="password"  placeholder="New password"/> </td>
-    <td style="position:absolute;left:65%;top:90%;"><input id="kerberosmasterpassword" type="password"placeholder="Master password"></td>
-    <td style="position:absolute;left:88%;top:90%;"> <button id="kerberossave" type="submit">Save</button></td>
-</tr>
-</table>
-<script src="js/passwords.js"></script>
-<script src="js/options.js"></script>
+  <body>
+    <div style="font-size: 2rem; text-align: center; color: aliceblue">
+      EnArvy's Captcha Solver Settings
+    </div>
+    <div class="heading">Change Master Password</div>
+    <div style="display: flex; justify-content: center; padding: 1rem">
+      <form>
+        <input
+          style="margin: 0rem 2rem"
+          id="oldmaster"
+          type="password"
+          placeholder="Old password"
+        />
+        <input
+          id="master"
+          style="margin: 0rem 2rem"
+          type="password"
+          placeholder="New password"
+        />
+        <button style="padding: 0.5rem" id="mastersave" type="submit">
+          Save
+        </button>
+      </form>
+    </div>
+    <div class="heading" style="border: #02a9ff 2px solid">
+      Change Website Passwords
+    </div>
+    <table>
+      <tr style="font-size: 1.7rem">
+        <td>Website</td>
+        <td>Username</td>
+        <td>Password</td>
+        <td>Master Password</td>
+        <th></th>
+      </tr>
+      <tr>
+        <form>
+          <td>Moodle</td>
+          <td>
+            <input id="moodleuname" type="text" placeholder="New username" />
+          </td>
+          <td>
+            <input id="moodlepass" type="password" placeholder="New password" />
+          </td>
+          <td>
+            <input
+              id="moodlemasterpassword"
+              type="password"
+              placeholder="Master password"
+            />
+          </td>
+          <td>
+            <button id="moodlesave" type="submit">Save</button>
+          </td>
+        </form>
+      </tr>
+      <tr>
+        <form>
+          <td>Webmail</td>
+          <td>
+            <input
+              id="webmailuname"
+              type="text"
+              name="username"
+              placeholder="New username"
+            />
+          </td>
+          <td>
+            <input
+              id="webmailpass"
+              type="password"
+              name="password"
+              placeholder="New password"
+            />
+          </td>
+          <td>
+            <input
+              id="webmailmasterpassword"
+              type="password"
+              placeholder="Master password"
+            />
+          </td>
+          <td>
+            <button id="webmailsave" type="submit">Save</button>
+          </td>
+        </form>
+      </tr>
+      <tr>
+        <form>
+          <td>Kerberos</td>
+          <td>
+            <input
+              id="kerberosuname"
+              type="text"
+              name="username"
+              placeholder="New username"
+            />
+          </td>
+          <td>
+            <input
+              id="kerberospass"
+              type="password"
+              name="password"
+              placeholder="New password"
+            />
+          </td>
+          <td>
+            <input
+              id="kerberosmasterpassword"
+              type="password"
+              placeholder="Master password"
+            />
+          </td>
+          <td>
+            <button id="kerberossave" type="submit">Save</button>
+          </td>
+        </form>
+      </tr>
+    </table>
+  </body>
+</html>
