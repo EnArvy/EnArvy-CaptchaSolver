@@ -1,33 +1,26 @@
 {
-    "name": "EnArvy's Captcha Solver",
-    "description": "Chrome extension to solve numerous captchas",
-    "version": "1.0",
-    "browser_action": {
-      "default_popup": "popup.html"
+  "name": "EnArvy's Captcha Solver",
+  "description": "Chrome extension to solve numerous captchas",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["https://moodle.iitd.ac.in/login/index.php"],
+      "js": ["js/passwords.js", "js/moodle.js"]
     },
-    "manifest_version": 2,
-    "content_scripts":
-      [
-        {
-          "matches": ["https://moodle.iitd.ac.in/login/index.php"],
-          "js":["js/passwords.js","js/moodle.js"]
-        },
-        {
-          "matches":["https://webmail.iitd.ac.in/*"],
-          "js":["js/passwords.js","js/cbl.js","js/webmail.js"]
-        },
-        {
-          "matches":["https://oauth.iitd.ac.in/*"],
-          "js":["js/passwords.js","js/kerberos.js"]
-        }
-      ],
-    "permissions": ["storage"],
+    {
+      "matches": ["https://oauth.iitd.ac.in/*"],
+      "js": ["js/passwords.js", "js/kerberos.js"]
+    }
+  ],
+  "permissions": ["storage"],
 
-    
-    "options_ui":{
-      "page":"options.html",
-      "open_in_tab":true
-    },
-    "content_security_policy":"script-src 'unsafe-inline' 'self'"
-    
-  }
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_security_policy": "script-src 'unsafe-inline' 'self'"
+}
